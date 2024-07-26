@@ -6,7 +6,11 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: '*', // Be cautious with this in production
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.urlencoded({extended:true}));
 
 const API_KEY = process.env.API_KEY;
@@ -44,7 +48,8 @@ function fetchNews(url, res) {
 app.get("/all-news",(req,res)=>{
     let pageSize = parseInt(req.query.pageSize) || 40;
     let page = parseInt(req.query.page) || 1;
-    let url = `https://newsapi.org/v2/everything?q=page=${page}&pageSize=${pageSize}&apiKey=${API_KEY}`
+    let q = req.query.q || 'world';
+    let url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(q)}&page=${page}&pageSize=${pageSize}&apiKey=${API_KEY}`
     fetchNews(url,res);
 });
 

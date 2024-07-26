@@ -1,8 +1,13 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./src/**/*.{html,js}"],
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
+    extend: {},
     screens: {
+      'xs': {'max' : '640px'},
       'sm': '640px',
       // => @media (min-width: 640px) { ... }
 
@@ -18,13 +23,11 @@ export default {
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
     },
-    colors:{
-      lightBg:"#E2E8F0",
-      lightBgPrimary:"#F8FAC",
-      lightBgSecondary :"#0F172A",
-    },
-    extend: {},
+    colors : {
+      lightBg : "#E2E8F0",
+      lightBgPrimary : "#F8FAFC", 
+      lightBgSecondary : "#0F172A",
+    }
   },
   plugins: [],
 }
-
