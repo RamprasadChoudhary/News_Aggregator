@@ -27,7 +27,7 @@ function TopHeadlines() {
 
         const categoryParam = params.categoy ? `&category=${params.category} `: "";
 
-        fetch(`http://localhost:3000/top-headlines?language=en${categoryParam}&page=${page}&pageSize=${pageSize}`)
+        fetch(`https://news-aggregator-vwl5.onrender.com/top-headlines?language=en${categoryParam}&page=${page}&pageSize=${pageSize}`)
         .then((response) => {
             if(response.ok) {
                 return response.json();
