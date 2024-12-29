@@ -24,7 +24,7 @@ function CountryNews() {
   useEffect(() => {
     setIsLoading(true);
     setError(null);
-    fetch(`https://news-aggregator-vwl5.onrender.com/country/${params.iso}?page=${page}&pageSize=${pageSize}`)
+    fetch(`https://news-aggregator-backend-cglz.onrender.com/country/${params.iso}?page=${page}&pageSize=${pageSize}`)
       .then((response) => {
         if (response.ok) {
           return response.json();
