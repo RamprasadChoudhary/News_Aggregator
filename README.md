@@ -3,6 +3,7 @@
 ## Overview
 
 The News Aggregator Application is a full-stack project designed to provide users with up-to-date news from around the world. Users can view top headlines based on various categories and countries, and access all global news on a single page. This project leverages modern web development technologies and APIs to deliver a seamless and dynamic news reading experience.
+Live Demo : https://news-aggregator-frontend-8hbz.onrender.com/
 
 ## Features
 
